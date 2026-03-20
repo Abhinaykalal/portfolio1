@@ -1742,7 +1742,7 @@ textarea {
   }
 
   .portrait-frame {
-    top: 84px;
+    top: 60px;
     left: 30%;
     right: auto;
     transform: translateX(-50%);
