@@ -1590,7 +1590,7 @@ textarea {
   }
 
   .hero-visual {
-    min-height: 360px;
+    min-height: 420px;
   }
 
   .identity-pill {
@@ -1598,27 +1598,27 @@ textarea {
   }
 
   .portrait-frame {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 120px;
+    right: 40px;
     width: 270px;
     height: 325px;
   }
 
   .floating-bolt {
-    top: 30%;
-    left: 15%;
+    top: 131px;
+    left: 64px;
   }
 
   .floating-rocket {
-    top: 60%;
-    right: 15%;
+    top: 295px;
+    right: 14px;
+    animation-delay: -2s;
   }
 
   .floating-bulb {
-    bottom: 20%;
-    left: 10%;
+    top: 395px;
+    left: 88px;
+    animation-delay: -3.2s;
   }
 
   .floating-bolt {
