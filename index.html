@@ -27,6 +27,9 @@
           <a href="#skills">Skills</a>
           <a href="#contact">Contact</a>
         </div>
+        <button class="theme-toggle" type="button" aria-label="Toggle dark/light mode" id="theme-toggle">
+          <span class="theme-icon">🌙</span>
+        </button>
       </nav>
     </header>
 
@@ -57,9 +60,9 @@
                 <img class="portrait-image" src="./profile.jpeg" alt="Portrait of Abhinay Kumar Goud K">
               </div>
             </div>
-            <div class="floating floating-bolt">âš¡</div>
-            <div class="floating floating-rocket">ðŸš€</div>
-            <div class="floating floating-bulb">ðŸ’¡</div>
+            <div class="floating floating-bolt">⚡</div>
+            <div class="floating floating-rocket">🚀</div>
+            <div class="floating floating-bulb">💡</div>
           </div>
         </div>
       </section>
@@ -73,11 +76,12 @@
 
           <div class="projects-grid">
             <article class="project-card" data-reveal>
-              <div class="project-art">
-                <span>ðŸš€</span>
-              </div>
-              <div class="project-body">
-                <h3>Career Analyser AI</h3>
+              <a class="card-link" href="https://hackathonn-lilac.vercel.app/login?next=%2F" target="_blank" rel="noopener noreferrer">
+                <div class="project-art">
+                  <img src="./career profile.jpeg" alt="Career profile" class="project-image">
+                </div>
+                <div class="project-body">
+                  <h3>Career Analyser AI</h3>
                 <p>
                   It gives the analysis of your technical and communication skills and suggests the improvements
                   to be done and provides a roadmap based on your resume, github and linkedin profiles.
@@ -88,6 +92,7 @@
                   <span class="chip">Database</span>
                 </div>
               </div>
+            </a>
             </article>
           </div>
         </div>
@@ -101,19 +106,17 @@
           </div>
 
           <div class="social-grid">
-            <article class="social-card social-card-instagram" data-reveal>
-              <div class="social-art">
-                <div class="social-badge social-badge-message">Message</div>
-                <div class="social-badge social-badge-mail"></div>
-                <div class="social-badge social-badge-code">&lt;/&gt;</div>
-                <div class="social-badge social-badge-send">Send Message</div>
-                <div class="social-figure social-figure-instagram"></div>
-              </div>
-              <div class="social-body">
-                <h3>Instagram community</h3>
+            <article class="social-card" data-reveal>
+              <a class="card-link" href="https://www.instagram.com/abhi.aptitude/" target="_blank" rel="noopener noreferrer">
+                <div class="social-art">
+                  <img src="./insta profile.jpeg" alt="Instagram profile" class="social-profile-image" loading="lazy">
+                </div>
+                <div class="social-body">
+                  <h3>Instagram community</h3>
                 <p>
-                  "Transforming Books into Trends" by building a learning-driven Instagram community where students
-                  explore arithmetic and reasoning through simple, engaging content.
+                  "Transforming Books into Trends" - Empowering a community of 100k+ learners to master 
+                    Arithmetic and Reasoning through simple engaging content. Passionate about turning 
+                    'I don't get it' into 'I got it!'🎓✨
                 </p>
                 <div class="chip-row social-chip-row">
                   <span class="chip social-chip">Canva Tool</span>
@@ -122,21 +125,20 @@
                   <span class="chip social-chip">Education</span>
                 </div>
               </div>
+              </a>
             </article>
 
-            <article class="social-card social-card-facebook" data-reveal>
-              <div class="social-art">
-                <div class="social-bubble social-bubble-globe"></div>
-                <div class="social-bubble social-bubble-idea"></div>
-                <div class="social-bubble social-bubble-play"></div>
-                <div class="social-bubble social-bubble-gear"></div>
-                <div class="social-figure social-figure-facebook"></div>
-              </div>
-              <div class="social-body">
-                <h3>Facebook Community</h3>
+            <article class="social-card" data-reveal>
+              <a class="card-link" href="https://www.facebook.com/share/1H2U462t2F/" target="_blank" rel="noopener noreferrer" loading="lazy">
+                <div class="social-art">
+                  <img src="./facebook profile.jpeg" alt="Facebook profile" class="social-profile-image">
+                </div>
+                <div class="social-body">
+                  <h3>Facebook Community</h3>
                 <p>
-                  Building an engaging educational community on Facebook with daily content, interactive learning
-                  sessions, and accessible explanations for students growing in arithmetic and reasoning.
+                  Building an engaging educational community on Facebook with daily content, 
+                    interactive sessions, and valuable resources for 1900+ students passionate about 
+                    learning "Arithmetic and Reasoning".
                 </p>
                 <div class="chip-row social-chip-row">
                   <span class="chip social-chip">Facebook</span>
@@ -145,6 +147,7 @@
                   <span class="chip social-chip">Student Engagement</span>
                 </div>
               </div>
+              </a>
             </article>
           </div>
         </div>
@@ -159,7 +162,7 @@
 
           <div class="skills-grid">
             <article class="skill-card" data-reveal>
-              <h3>âš¡ Technical Skills</h3>
+              <h3>⚡ Technical Skills</h3>
               <div class="skill-line">
                 <span>Python</span>
                 <div class="progress"><i style="width: 72%"></i></div>
@@ -175,7 +178,7 @@
             </article>
 
             <article class="skill-card" data-reveal>
-              <h3>ðŸŽ¯ Interests</h3>
+              <h3>🎯 Interests</h3>
               <ul class="plain-list">
                 <li>Product Design</li>
                 <li>Data Analysis</li>
@@ -185,12 +188,40 @@
             </article>
 
             <article class="skill-card" data-reveal>
-              <h3>ðŸ“š Currently Learning</h3>
+              <h3>📚 Currently Learning</h3>
               <ul class="plain-list roomy">
                 <li>Learning - Data structures through python</li>
                 <li>Learning - New Framework</li>
                 <li>Learning - Leadership/Communication</li>
               </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section internships-section" id="internships">
+        <div class="container">
+          <div class="section-heading" data-reveal>
+            <h2>Internships</h2>
+            <span></span>
+          </div>
+
+          <div class="internships-grid">
+            <article class="internship-card" data-reveal>
+              <div class="internship-header">
+                <h3>Full Stack Developer</h3>
+                <span class="internship-badge">Recently selected</span>
+              </div>
+              <div class="internship-company">EvolveX</div>
+              <p class="internship-description">
+                "I've got a Full Stack Developer position at EvolveX! This opportunity came directly from my recent experience at Hackforge-2026, where my team and I built a Career analyser AI which is very helpful to students.
+              </p>
+              <div class="chip-row internship-chip-row">
+                <span class="chip internship-chip">Web Development</span>
+                <span class="chip internship-chip">Frontend</span>
+                <span class="chip internship-chip">Backend</span>
+                <span class="chip internship-chip">Team Collaboration</span>
+              </div>
             </article>
           </div>
         </div>
@@ -206,7 +237,7 @@
           <div class="contact-grid">
             <div class="contact-cards">
               <article class="contact-card" data-reveal>
-                <div class="contact-icon">âœ‰ï¸</div>
+                <div class="contact-icon">📥</div>
                 <div>
                   <h3>Email</h3>
                   <p>abhinaykalal019@gmail.com</p>
@@ -214,7 +245,7 @@
               </article>
 
               <article class="contact-card" data-reveal>
-                <div class="contact-icon">ðŸ’¼</div>
+                <div class="contact-icon">💼</div>
                 <div>
                   <h3>LinkedIn</h3>
                   <p>linkedin.com/in/abhinaykumargoud</p>
@@ -222,7 +253,7 @@
               </article>
 
               <article class="contact-card" data-reveal>
-                <div class="contact-icon">ðŸ“±</div>
+                <div class="contact-icon">📸</div>
                 <div>
                   <h3>Instagram</h3>
                   <p>@abhi.aptitude</p>
@@ -230,7 +261,7 @@
               </article>
 
               <article class="contact-card" data-reveal>
-                <div class="contact-icon">ðŸ“</div>
+                <div class="contact-icon">📍</div>
                 <div>
                   <h3>Location</h3>
                   <p>Hyderabad , India</p>
@@ -238,32 +269,14 @@
               </article>
             </div>
 
-            <form class="contact-form" action="https://api.web3forms.com/submit" method="POST" data-reveal>
-
-              <!-- Web3Forms Access Key -->
+            <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
               <input type="hidden" name="access_key" value="fc7a3d47-fe6b-4d94-aa7a-bc1627d018d2">
-
-              <!-- Name -->
-              <label for="name">Name</label>
-              <input id="name" name="name" type="text" placeholder="Your name" required>
-
-              <!-- Email -->
-              <label for="email">Email</label>
-              <input id="email" name="email" type="email" placeholder="your@email.com" required>
-
-              <!-- Message -->
-              <label for="message">Message</label>
-              <textarea id="message" name="message" placeholder="Tell me about your project..." required></textarea>
-
-              <!-- Submit Button -->
-              <button class="btn btn-primary btn-full" type="submit">
-                Send Message
-              </button>
-
-              <!-- Status Message -->
-              <p class="form-status" aria-live="polite"></p>
-
+              <input type="text" name="name" placeholder="Your name" required>
+              <input type="email" name="email" placeholder="Your email" required>
+              <textarea name="message" placeholder="Your message" required></textarea>
+              <button type="submit" class="btn btn-primary btn-full">Submit</button>
             </form>
+           
           </div>
         </div>
       </section>
@@ -271,12 +284,12 @@
 
     <footer class="site-footer">
       <div class="container footer-inner">
-        <div class="footer-icons">
-          <a href="#projects" aria-label="Projects">ðŸ’¼</a>
-          <a href="#home" aria-label="Home"></a>
-          <a href="#contact" aria-label="Contact">âœ‰ï¸</a>
+        <div class="social links">
+          <a href="https://www.linkedin.com/in/k-abhinay-kumar-goud-208664370" target="_blank" title="LinkedIn">💼</a>
+            <a href="https://www.instagram.com/abhi.aptitude?igsh=MXZmZTRzNmVmd2F2Yw==" target="_blank" title="Instagram">🎓</a>
+            <a href="mailto:abhinaykalal019@gmail.com" title="Email">📥</a>
         </div>
-        <p>&copy; 2026 Abhinay Kumar Goud K. Built with ðŸ’œ and AI assistance.</p>
+        <p>&copy; 2026 Abhinay Kumar Goud K.</p>
       </div>
     </footer>
   </div>

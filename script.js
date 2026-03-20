@@ -48,6 +48,32 @@ revealItems.forEach((item) => revealObserver.observe(item));
 window.addEventListener("scroll", setActiveLink, { passive: true });
 window.addEventListener("load", setActiveLink);
 
+// Theme toggle functionality
+const themeToggle = document.getElementById("theme-toggle");
+const html = document.documentElement;
+
+const initTheme = () => {
+  const savedTheme = localStorage.getItem("theme") || "dark";
+  if (savedTheme === "light") {
+    html.classList.add("light-mode");
+    themeToggle.textContent = "☀️";
+  } else {
+    html.classList.remove("light-mode");
+    themeToggle.textContent = "🌙";
+  }
+};
+
+if (themeToggle) {
+  themeToggle.addEventListener("click", () => {
+    const isLightMode = html.classList.toggle("light-mode");
+    const theme = isLightMode ? "light" : "dark";
+    localStorage.setItem("theme", theme);
+    themeToggle.textContent = isLightMode ? "☀️" : "🌙";
+  });
+}
+
+initTheme();
+
 if (form && statusText) {
   form.addEventListener("submit", (event) => {
     event.preventDefault();
