@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
   <div class="page-shell">
     <header class="site-header">
@@ -38,7 +40,8 @@
             </h1>
             <p class="hero-role">[Intern] at EvolveX</p>
             <p class="hero-text">
-              I'm an engineering student at CMR institute of technology with a strong interest in creative content and grow my analytics.
+              I'm an engineering student at CMR institute of technology with a strong interest in creative content and
+              grow my analytics.
               I'm driven by solving real-world problems, creativity, innovation, and I enjoy working on startup
               ideas and real world problems. My goal is to build a professional portfolio and secure a full time offer.
             </p>
@@ -235,18 +238,31 @@
               </article>
             </div>
 
-            <form class="contact-form" data-reveal>
+            <form class="contact-form" action="https://api.web3forms.com/submit" method="POST" data-reveal>
+
+              <!-- Web3Forms Access Key -->
+              <input type="hidden" name="access_key" value="fc7a3d47-fe6b-4d94-aa7a-bc1627d018d2">
+
+              <!-- Name -->
               <label for="name">Name</label>
-              <input id="name" name="name" type="text" placeholder="Your name">
+              <input id="name" name="name" type="text" placeholder="Your name" required>
 
+              <!-- Email -->
               <label for="email">Email</label>
-              <input id="email" name="email" type="email" placeholder="your@email.com">
+              <input id="email" name="email" type="email" placeholder="your@email.com" required>
 
+              <!-- Message -->
               <label for="message">Message</label>
-              <textarea id="message" name="message" placeholder="Tell me about your project..."></textarea>
+              <textarea id="message" name="message" placeholder="Tell me about your project..." required></textarea>
 
-              <button class="btn btn-primary btn-full" type="submit">Send Message</button>
+              <!-- Submit Button -->
+              <button class="btn btn-primary btn-full" type="submit">
+                Send Message
+              </button>
+
+              <!-- Status Message -->
               <p class="form-status" aria-live="polite"></p>
+
             </form>
           </div>
         </div>
@@ -267,4 +283,5 @@
 
   <script src="script.js"></script>
 </body>
+
 </html>
