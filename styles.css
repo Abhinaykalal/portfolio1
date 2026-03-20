@@ -109,6 +109,15 @@ html.light-mode .internship-chip {
 }
 
 
+html.light-mode .moments-card {
+  background: linear-gradient(180deg, rgba(235, 240, 252, 0.95), rgba(222, 230, 248, 0.92));
+  border-color: rgba(100, 110, 200, 0.2);
+}
+
+html.light-mode .moments-card p {
+  color: rgba(50, 70, 110, 0.9);
+}
+
 body::after {
   background:
     linear-gradient(98deg, transparent 40%, rgba(255, 255, 255, 0.035) 40.7%, rgba(255, 255, 255, 0.01) 44%, transparent 44.3%);
@@ -340,6 +349,7 @@ textarea {
 .hero-visual {
   position: relative;
   min-height: 560px;
+  overflow: hidden;
 }
 
 .hero-visual::before {
@@ -374,13 +384,24 @@ textarea {
   right: 70px;
   width: 300px;
   height: 360px;
-  padding: 8px;
-  border-radius: 42% 58% 62% 38% / 45% 38% 62% 55%;
-  background: linear-gradient(135deg, rgba(71, 135, 255, 0.75), rgba(248, 87, 174, 0.75));
-  border: 3px solid transparent;
-  border-image: linear-gradient(135deg, #6d76ff, #ff59b2) 1;
-  box-shadow: 0 26px 60px rgba(9, 13, 29, 0.42), 0 0 52px rgba(115, 80, 255, 0.26);
+  padding: 10px;
+  border-radius: 48% 52% 58% 42% / 42% 36% 64% 58%;
+  background: linear-gradient(135deg, rgba(86, 128, 255, 0.85), rgba(252, 93, 182, 0.72));
+  border: 4px solid transparent;
+  border-image: linear-gradient(145deg, rgba(122, 83, 255, 0.9), rgba(255, 79, 152, 0.95)) 1;
+  box-shadow: 0 28px 64px rgba(6, 10, 25, 0.44), 0 0 58px rgba(100, 78, 236, 0.32);
   overflow: hidden;
+  animation: portrait-pulse 5.8s ease-in-out infinite;
+}
+
+.portrait-frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.15), transparent 42%),
+    radial-gradient(circle at 80% 25%, rgba(255, 152, 198, 0.14), transparent 35%);
 }
 
 .portrait-frame::before {
@@ -398,15 +419,21 @@ textarea {
 .portrait-ring {
   width: 100%;
   height: 100%;
-  padding: 8px;
-  border-radius: 38% 62% 58% 42% / 48% 44% 59% 60%;
-  background: rgba(8, 12, 23, 0.9);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 11px;
+  border-radius: 46% 54% 58% 42% / 49% 43% 58% 54%;
+  background: rgba(10, 16, 32, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  animation: ring-glow 5.5s ease-in-out infinite;
 }
 
 .portrait-image {
-  border-radius: 34% 66% 68% 32% / 38% 45% 55% 62%;
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.15);
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 38% 62% 64% 36% / 40% 44% 56% 60%;
+  box-shadow: inset 0 0 0 1.5px rgba(255, 255, 255, 0.18);
 }
 
 
@@ -442,6 +469,28 @@ textarea {
   font-size: 2rem;
   filter: drop-shadow(0 10px 18px rgba(0, 0, 0, 0.25));
   animation: drift 6.5s ease-in-out infinite;
+}
+
+@keyframes portrait-pulse {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+    box-shadow: 0 28px 64px rgba(6, 10, 25, 0.44), 0 0 58px rgba(100, 78, 236, 0.32);
+  }
+  50% {
+    transform: translateY(-6px) rotate(0.75deg);
+    box-shadow: 0 34px 70px rgba(6, 10, 25, 0.42), 0 0 70px rgba(137, 91, 255, 0.35);
+  }
+}
+
+@keyframes ring-glow {
+  0%, 100% {
+    border-color: rgba(255, 255, 255, 0.16);
+    box-shadow: inset 0 0 0 0 rgba(255, 255, 255, 0);
+  }
+  50% {
+    border-color: rgba(255, 255, 255, 0.26);
+    box-shadow: inset 0 0 23px rgba(156, 145, 255, 0.22);
+  }
 }
 
 .floating-bolt {
@@ -1175,6 +1224,46 @@ textarea {
   font-weight: 500;
 }
 
+.moments-section {
+  padding-top: 92px;
+  padding-bottom: 76px;
+}
+
+.moments-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 26px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.moments-card {
+  background: linear-gradient(180deg, rgba(25, 35, 65, 0.96), rgba(18, 28, 50, 0.94));
+  border: 1px solid rgba(107, 120, 200, 0.25);
+  border-radius: 24px;
+  padding: 24px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.moments-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 16px;
+}
+
+.moments-card p {
+  margin: 0;
+  color: rgba(224, 232, 255, 0.85);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
 .contact-grid {
   grid-template-columns: 0.94fr 1.06fr;
   align-items: start;
@@ -1562,6 +1651,14 @@ textarea {
     margin-bottom: 16px;
   }
 
+  .moments-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .moments-card img {
+    height: 200px;
+  }
+
   .nav {
     min-height: 78px;
   }
@@ -1637,18 +1734,21 @@ textarea {
   }
 
   .floating-bolt {
-    top: 76px;
-    left: 10px;
+    top: 40px;
+    left: 8px;
+    font-size: 1.5rem;
   }
 
   .floating-bulb {
-    top: 196px;
-    left: 18px;
+    top: 140px;
+    left: 12px;
+    font-size: 1.5rem;
   }
 
   .floating-rocket {
-    top: 134px;
+    top: 80px;
     right: 6px;
+    font-size: 1.5rem;
   }
 
   .project-art {
