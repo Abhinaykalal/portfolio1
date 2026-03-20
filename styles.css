@@ -1743,7 +1743,7 @@ textarea {
 
   .portrait-frame {
     top: 84px;
-    left: 50%;
+    left: 30%;
     right: auto;
     transform: translateX(-50%);
     width: 180px;
