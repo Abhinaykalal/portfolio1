@@ -1,19 +1,87 @@
 :root {
-  --bg-left: #0c1326;
-  --bg-right: #2c2448;
-  --panel: rgba(33, 42, 69, 0.9);
-  --panel-strong: rgba(35, 44, 70, 0.95);
-  --panel-border: rgba(255, 255, 255, 0.06);
-  --text: #f8fbff;
-  --muted: rgba(230, 236, 247, 0.78);
-  --accent-cyan: #41d6ff;
-  --accent-violet: #7d65ff;
-  --accent-pink: #f34fa4;
-  --shadow: 0 22px 45px rgba(7, 11, 24, 0.26);
+  --bg-left: #080c24;
+  --bg-right: #100f32;
+  --panel: rgba(22, 29, 55, 0.88);
+  --panel-strong: rgba(19, 25, 45, 0.95);
+  --panel-border: rgba(156, 162, 255, 0.17);
+  --text: #e9edff;
+  --muted: rgba(200, 213, 245, 0.9);
+  --accent-cyan: #7fe8ff;
+  --accent-violet: #8f76ff;
+  --accent-pink: #f751b1;
+  --shadow: 0 24px 56px rgba(6, 9, 23, 0.34);
   --radius-xl: 28px;
   --radius-lg: 22px;
   --radius-md: 18px;
   --container: 1120px;
+}
+
+.preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(circle at 50% 25%, rgba(34, 34, 52, 0.95), rgba(12, 16, 40, 0.98));
+  backdrop-filter: blur(4px);
+  opacity: 1;
+  transition: opacity 0.35s ease, visibility 0.35s ease;
+  visibility: visible;
+}
+
+.preloader.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.preloader-content {
+  text-align: center;
+  color: #e8edff;
+  font-family: "Poppins", sans-serif;
+}
+
+.preloader-content p {
+  margin-top: 14px;
+  font-size: 1rem;
+  letter-spacing: 0.06em;
+  color: rgba(241, 247, 255, 0.95);
+}
+
+.preloader-cube {
+  width: 70px;
+  height: 70px;
+  border: 2px solid rgba(150, 160, 255, 0.7);
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(143, 114, 255, 0.6), rgba(243, 80, 171, 0.6));
+  animation: spin3d 1.6s cubic-bezier(0.65, 0.05, 0.36, 1) infinite;
+  transform-style: preserve-3d;
+  box-shadow: 0 0 30px rgba(90, 140, 255, 0.45), 0 18px 38px rgba(28, 34, 66, 0.55);
+}
+
+@keyframes spin3d {
+  0% {
+    transform: perspective(220px) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    box-shadow: 0 0 22px rgba(117, 139, 255, 0.8), 0 16px 26px rgba(18, 24, 54, 0.5);
+  }
+  50% {
+    transform: perspective(220px) rotateX(180deg) rotateY(180deg) rotateZ(45deg);
+    box-shadow: 0 0 32px rgba(240, 80, 170, 0.95), 0 20px 32px rgba(24, 28, 56, 0.58);
+  }
+  100% {
+    transform: perspective(220px) rotateX(360deg) rotateY(360deg) rotateZ(90deg);
+    box-shadow: 0 0 22px rgba(117, 139, 255, 0.8), 0 16px 26px rgba(18, 24, 54, 0.5);
+  }
+}
+
+@media (max-width: 760px) {
+  .preloader-cube {
+    width: 58px;
+    height: 58px;
+  }
+  .preloader-content p {
+    font-size: 0.93rem;
+  }
 }
 
 html.light-mode {
@@ -189,7 +257,12 @@ textarea {
 .nav-links a {
   position: relative;
   font-size: 0.92rem;
-  color: rgba(255, 255, 255, 0.88);
+  color: rgba(240, 245, 255, 0.98);
+}
+
+.nav-links a:hover,
+.nav-links a.is-active {
+  color: #ffffff;
 }
 
 .nav-links a::after {
@@ -295,13 +368,13 @@ textarea {
 .hero-role {
   margin: 28px 0 26px;
   font-size: 1.05rem;
-  color: rgba(255, 255, 255, 0.62);
+  color: rgba(209, 221, 255, 0.9);
 }
 
 .hero-text {
   margin: 0;
   max-width: 540px;
-  color: var(--muted);
+  color: rgba(220, 227, 255, 0.94);
   font-size: 1rem;
   line-height: 1.95;
 }
@@ -521,6 +594,7 @@ textarea {
   font-size: clamp(2rem, 3vw, 3.5rem);
   line-height: 1.1;
   font-weight: 800;
+  color: #f5f7ff;
 }
 
 .section-heading span {
@@ -729,7 +803,7 @@ textarea {
 
 .social-body p {
   margin: 0;
-  color: #647794;
+  color: rgba(217, 227, 255, 0.95);
   font-size: 0.98rem;
   line-height: 1.8;
 }

@@ -74,6 +74,23 @@ if (themeToggle) {
 
 initTheme();
 
+const preloader = document.getElementById("preloader");
+const preloaderStart = performance.now();
+const preloaderMinimum = 2200; // stay for at least 2.2 seconds
+
+window.addEventListener("load", () => {
+  const elapsed = performance.now() - preloaderStart;
+  const wait = Math.max(0, preloaderMinimum - elapsed);
+
+  window.setTimeout(() => {
+    if (preloader) {
+      preloader.classList.add("hidden");
+      preloader.setAttribute("aria-hidden", "true");
+    }
+    setActiveLink();
+  }, wait);
+});
+
 if (form && statusText) {
   form.addEventListener("submit", (event) => {
     event.preventDefault();
