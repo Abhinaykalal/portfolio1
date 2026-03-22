@@ -371,12 +371,20 @@ textarea {
   color: rgba(209, 221, 255, 0.9);
 }
 
+html.light-mode .hero-role {
+  color: rgba(34, 47, 78, 0.95);
+}
+
 .hero-text {
   margin: 0;
   max-width: 540px;
   color: rgba(220, 227, 255, 0.94);
   font-size: 1rem;
   line-height: 1.95;
+}
+
+html.light-mode .hero-text {
+  color: rgba(26, 38, 60, 0.95);
 }
 
 .hero-actions {
