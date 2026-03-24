@@ -602,7 +602,7 @@ html.light-mode .hero-text {
   font-size: clamp(2rem, 3vw, 3.5rem);
   line-height: 1.1;
   font-weight: 800;
-  color: #121e4b;
+  color:           #84b0f1;
 }
 
 .section-heading span {
