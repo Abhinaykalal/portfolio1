@@ -138,6 +138,7 @@ body::before {
     radial-gradient(circle at 15% 10%, rgba(94, 110, 255, 0.08), transparent 28%),
     radial-gradient(circle at 82% 12%, rgba(236, 88, 168, 0.12), transparent 32%),
     radial-gradient(circle at 90% 75%, rgba(160, 90, 255, 0.09), transparent 26%);
+  animation: ambientShift 18s ease-in-out infinite alternate;
 }
 
 html.light-mode body::before {
@@ -191,6 +192,7 @@ body::after {
     linear-gradient(98deg, transparent 40%, rgba(255, 255, 255, 0.035) 40.7%, rgba(255, 255, 255, 0.01) 44%, transparent 44.3%);
   opacity: 0.6;
   z-index: -1;
+  animation: meshFloat 16s ease-in-out infinite alternate;
 }
 
 a {
@@ -246,6 +248,8 @@ textarea {
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+  background-size: 200% 200%;
+  animation: brandGlow 7s linear infinite;
 }
 
 .nav-links {
@@ -401,6 +405,8 @@ html.light-mode .hero-text {
   min-width: 170px;
   min-height: 58px;
   padding: 0 30px;
+  position: relative;
+  overflow: hidden;
   border-radius: 999px;
   font-weight: 600;
   border: 1px solid transparent;
@@ -408,7 +414,20 @@ html.light-mode .hero-text {
 }
 
 .btn:hover {
-  transform: translateY(-2px);
+  transform: translateY(-4px);
+}
+
+.btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(115deg, transparent 20%, rgba(255, 255, 255, 0.34) 50%, transparent 80%);
+  transform: translateX(-140%);
+  transition: transform 0.7s ease;
+}
+
+.btn:hover::before {
+  transform: translateX(140%);
 }
 
 .btn-primary {
@@ -611,6 +630,8 @@ html.light-mode .hero-text {
   margin: 0 auto;
   border-radius: 999px;
   background: linear-gradient(90deg, var(--accent-violet), var(--accent-pink));
+  background-size: 200% 100%;
+  animation: underlineFlow 4s linear infinite;
 }
 
 .projects-grid,
@@ -637,6 +658,46 @@ html.light-mode .hero-text {
 
 .project-card {
   overflow: hidden;
+  position: relative;
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.project-card::before,
+.social-card::before,
+.skill-card::before,
+.moments-card::before,
+.contact-card::before,
+.contact-form::before,
+.internship-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent 15%, rgba(255, 255, 255, 0.12) 50%, transparent 85%);
+  transform: translateX(-130%);
+  transition: transform 0.85s ease;
+  pointer-events: none;
+}
+
+.project-card:hover,
+.social-card:hover,
+.skill-card:hover,
+.moments-card:hover,
+.contact-card:hover,
+.contact-form:hover,
+.internship-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 32px 70px rgba(6, 9, 23, 0.42);
+  border-color: rgba(151, 168, 255, 0.3);
+}
+
+.project-card:hover::before,
+.social-card:hover::before,
+.skill-card:hover::before,
+.moments-card:hover::before,
+.contact-card:hover::before,
+.contact-form:hover::before,
+.internship-card:hover::before {
+  transform: translateX(130%);
 }
 
 .card-link {
@@ -662,6 +723,14 @@ html.light-mode .hero-text {
   height: 100%;
   object-fit: cover;
   display: block;
+  transition: transform 0.6s ease, filter 0.6s ease;
+}
+
+.project-card:hover .project-image,
+.social-card:hover .social-profile-image,
+.moments-card:hover img {
+  transform: scale(1.08);
+  filter: saturate(1.08);
 }
 
 .project-art span {
@@ -719,6 +788,7 @@ html.light-mode .hero-text {
 
 .social-card {
   overflow: hidden;
+  position: relative;
   border-radius: 30px;
   background: linear-gradient(180deg, rgba(38, 48, 77, 0.94), rgba(20, 29, 55, 0.82));
   border: 1px solid rgba(112, 139, 236, 0.24);
@@ -751,6 +821,7 @@ html.light-mode .hero-text {
   object-fit: cover;
   display: block;
   border-radius: 0 0 22px 22px;
+  transition: transform 0.7s ease, filter 0.7s ease;
 }
 
 .social-card-instagram .social-art {
@@ -1089,6 +1160,7 @@ html.light-mode .hero-text {
 }
 
 .skill-card {
+  position: relative;
   min-height: 320px;
   padding: 30px 28px;
   border-radius: 22px;
@@ -1180,6 +1252,24 @@ html.light-mode .hero-text {
   border-radius: inherit;
   background: linear-gradient(90deg, var(--accent-violet), var(--accent-pink));
   box-shadow: 0 0 16px rgba(226, 91, 170, 0.26);
+  transform-origin: left center;
+  animation: skillCharge 1.3s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.skill-card:nth-child(1) .skill-line:nth-child(2) i {
+  animation-delay: 0.15s;
+}
+
+.skill-card:nth-child(1) .skill-line:nth-child(3) i {
+  animation-delay: 0.3s;
+}
+
+.skill-card:nth-child(1) .skill-line:nth-child(4) i {
+  animation-delay: 0.45s;
+}
+
+.skill-card:nth-child(1) .skill-line:nth-child(5) i {
+  animation-delay: 0.6s;
 }
 
 .plain-list {
@@ -1318,6 +1408,7 @@ html.light-mode .hero-text {
 }
 
 .moments-card {
+  position: relative;
   background: linear-gradient(180deg, rgba(25, 35, 65, 0.96), rgba(18, 28, 50, 0.94));
   border: 1px solid rgba(107, 120, 200, 0.25);
   border-radius: 24px;
@@ -1335,6 +1426,7 @@ html.light-mode .hero-text {
   object-fit: cover;
   border-radius: 12px;
   margin-bottom: 16px;
+  transition: transform 0.7s ease, filter 0.7s ease;
 }
 
 .moments-card p {
@@ -1355,6 +1447,7 @@ html.light-mode .hero-text {
 }
 
 .contact-card {
+  position: relative;
   display: flex;
   align-items: center;
   gap: 18px;
@@ -1371,6 +1464,12 @@ html.light-mode .hero-text {
   border-radius: 16px;
   background: linear-gradient(135deg, var(--accent-violet), var(--accent-pink));
   box-shadow: 0 12px 24px rgba(122, 98, 255, 0.16);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.contact-card:hover .contact-icon {
+  transform: rotate(-8deg) scale(1.08);
+  box-shadow: 0 18px 30px rgba(122, 98, 255, 0.24);
 }
 
 .contact-card h3 {
@@ -1453,6 +1552,7 @@ html.light-mode .hero-text {
 }
 
 .contact-form {
+  position: relative;
   padding: 32px 30px 28px;
   display: grid;
   gap: 16px;
@@ -1522,6 +1622,7 @@ html.light-mode .hero-text {
 .contact-form textarea:focus {
   border-color: rgba(65, 214, 255, 0.42);
   box-shadow: 0 0 0 3px rgba(65, 214, 255, 0.08);
+  transform: translateY(-1px);
 }
 
 .form-status {
@@ -1577,6 +1678,65 @@ html.light-mode .hero-text {
   100% {
     opacity: 1;
     transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes ambientShift {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.95;
+  }
+  100% {
+    transform: translate3d(0, -18px, 0) scale(1.06);
+    opacity: 1;
+  }
+}
+
+@keyframes meshFloat {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(22px, 0, 0);
+  }
+}
+
+@keyframes brandGlow {
+  0% {
+    background-position: 0% 50%;
+    filter: drop-shadow(0 0 0 rgba(242, 83, 171, 0));
+  }
+  50% {
+    background-position: 100% 50%;
+    filter: drop-shadow(0 0 10px rgba(127, 232, 255, 0.28));
+  }
+  100% {
+    background-position: 0% 50%;
+    filter: drop-shadow(0 0 0 rgba(242, 83, 171, 0));
+  }
+}
+
+@keyframes underlineFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+@keyframes skillCharge {
+  0% {
+    transform: scaleX(0);
+    filter: brightness(1.2);
+  }
+  70% {
+    transform: scaleX(1.03);
+    filter: brightness(1);
+  }
+  100% {
+    transform: scaleX(1);
+    filter: brightness(1);
   }
 }
 
@@ -1659,6 +1819,17 @@ html.light-mode .hero-text {
   }
   50% {
     transform: translateY(-12px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
 
